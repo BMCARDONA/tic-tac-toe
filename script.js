@@ -1,13 +1,7 @@
 let cells = document.querySelectorAll(".cell");
 let gameOverCaption = document.querySelector(".gameOverCaption");
-let gameOver = false;
+let isGameOver = false;
 let moveCount = 1;
-
-// How to add classes to different cells -- nice. 
-// for (let i = 0; i < cells.length; i++){
-//   cells[i].classList.add(`${i}`);
-// }
-
 currentBoard = ['', '', '', '', '', '', '', '', ''];
 currentMove = '';
 
@@ -44,7 +38,7 @@ const isWinner = (board) => {
         board[2] === 'X' && board[5] === 'X' && board[8] === 'X' || 
         board[0] === 'X' && board[4] === 'X' && board[8] === 'X' || 
         board[6] === 'X' && board[4] === 'X' && board[2] === 'X') {
-        gameOver = true;
+        isGameOver = true;
         gameOverCaption.textContent = "X wins! Click any cell to play again!"
     }
     else if 
@@ -56,11 +50,11 @@ const isWinner = (board) => {
         board[2] === 'O' && board[5] === 'O' && board[8] === 'O' || 
         board[0] === 'O' && board[4] === 'O' && board[8] === 'O' || 
         board[6] === 'O' && board[4] === 'O' && board[2] === 'O') {
-        gameOver = true;
+        isGameOver = true;
         gameOverCaption.textContent = "O wins! Click any cell to play again!"
     }
     else if (moveCount == 9) {
-        gameOver = true;
+        isGameOver = true;
         gameOverCaption.textContent = "It's a tie! Click any cell to play again!"
     }
     moveCount += 1;
@@ -74,8 +68,8 @@ const updateBoard = (cell) => {
 
 cells.forEach(cell => {
     cell.addEventListener('click', () => {
-          if (gameOver) {
-            gameOver = false;
+          if (isGameOver) {
+            isGameOver = false;
             reset();
           }
           if (cell.textContent == '') {
@@ -85,3 +79,8 @@ cells.forEach(cell => {
           }
     });
 })
+
+// How to add classes to different cells -- nice. 
+// for (let i = 0; i < cells.length; i++){
+//   cells[i].classList.add(`${i}`);
+// }
