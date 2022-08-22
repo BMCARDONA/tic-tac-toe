@@ -4,6 +4,9 @@ body {
   align-items: center;
 }
 
+.gameName {
+  text-align: center;
+}
 
 .gameBoard {
   display: inline-grid;
