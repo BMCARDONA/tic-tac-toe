@@ -1,11 +1,23 @@
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
 body {
   display: grid;
   justify-content: center;
   align-items: center;
+  background-color: seagreen;
 }
 
 .gameName {
   text-align: center;
+  font-size: 40px;
 }
 
 .gameBoard {
@@ -16,21 +28,18 @@ body {
   border: 4px solid rgb(0, 0, 0);
 }
 
-.cell-1,
-.cell-2,
-.cell-3,
-.cell-4,
-.cell-5,
-.cell-6,
-.cell-7,
-.cell-8,
-.cell-9 {
+.cell {
   display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 90px;
-  background-color: seagreen;
+  background-color: slategray;
   /* Make a border to make it seem like you're changing the color of grid lines */
   border: 5px solid rgb(0, 0, 0);
+}
+
+.gameOverCaption {
+  text-align: center;
+  font-size: 30px;
 }
